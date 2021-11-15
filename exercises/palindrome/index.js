@@ -7,6 +7,14 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// ALTERNATIVE SOLUTION:
+// 1) Convert string to Array
+// 2) Check all elements with its symmetric in the string. ("abba")
+// index 0 should be equal with index str.length
+function palindrome(str) {
+  return str
+    .split("")
+    .every((item, index, arr) => arr[arr.length - index - 1] === item);
+}
 
 module.exports = palindrome;
